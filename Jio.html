@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Coba Lihat yang Aneh di Foto Ini</title>
+  <img src="jio.jpg" width="270px" height="280px">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: blue;
+      color: purple;
+      font-family: sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      padding-top: 50px;
+    }
+    #prankImage {
+      max-width: 90%;
+      height: auto;
+      border: 3px solid white;
+      margin-bottom: 20px;
+    }
+    #trapButton {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #screamer {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    #screamer img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body onload="requestFullscreen();">
+
+  <div class="container">
+    <h1>Ada yang aneh nggak di gambar ini?</h1>
+    <img id="prankImage" src="file-Mqh6agvh6adnYpFi75Nt99" alt="Foto misterius">
+    <br>
+    <button id="trapButton" onclick="mulaiPrank()">Klik untuk memperbesar</button>
+  </div>
+
+  <div id="screamer">
+    <img src="https://i.imgur.com/oEUksmz.png" alt="BOO!">
+    <audio id="screamSound" src="mampus.mp3"></audio>
+  </div>
+
+  <script>
+    function requestFullscreen() {
+      const el = document.documentElement;
+      if (el.requestFullscreen) {
+        el.requestFullscreen();
+      } else if (el.mozRequestFullScreen) {
+        el.mozRequestFullScreen();
+      } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
+      } else if (el.msRequestFullscreen) {
+        el.msRequestFullscreen();
+      }
+    }
+
+    function mulaiPrank() {
+      // Delay lebih panjang: 9 detik
+      setTimeout(() => {
+        const screamer = document.getElementById('screamer');
+        const sound = document.getElementById('screamSound');
+        screamer.style.display = 'flex';
+        sound.play();
+      }, 9000);
+    }
+  </script>
+
+</body>
+</html>
